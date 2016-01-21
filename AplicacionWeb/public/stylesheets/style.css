@@ -1,0 +1,188 @@
+@charset "utf-8";
+/* CSS Document */
+/***********************************************************
+************************************************************/
+
+body {
+	background-image:url(/images/fondo.jpg);
+	background-size: cover;
+	color: #222;
+	font-family: 'Roboto Condensed', sans-serif;
+	font-weight: 300;
+	font-size: 15px;
+	height:800px;
+	position: relative;
+	bottom:0;
+
+}
+
+
+header{
+	background-color: #fff; 
+	margin: auto;
+	min-width: 400px;
+	width: 100%;
+	border: 1px solid #33C3B9;
+	border-radius: 4px;
+	box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
+	color: #fff;
+	display: block;
+	margin: auto;
+	overflow: hidden;
+}
+
+nav {
+	margin-right: 30px;
+	margin-left: 30px;
+	border-top: 2px solid #33C3B9;
+	background-color: #063D92;
+	display: block;
+	margin: auto;
+	overflow: hidden;
+}
+nav ul {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+nav ul li {
+	display: inline-block;
+	list-style-type: none;
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	-ms-transition: all 0.2s;
+	-o-transition: all 0.2s;
+	transition: all 0.2s; 
+}
+	
+nav > ul > li > a {
+	color: #fff;
+	display: block;
+	line-height: 56px;
+	padding: 0 24px;
+	text-decoration: none;
+	text-align: right;
+
+}
+
+nav > ul > li:hover {
+	border-radius: 4px;
+    background-color: #fff;
+}
+
+nav > ul > li:hover > a {
+    color: #145C77;
+    text-decoration: underline;
+}
+
+h1{
+	text-align: center;
+}
+h2{
+	margin-left: 20%;
+	margin-right: 5%;
+	text-align : center;
+	margin-top: 25px;
+	font-size: 16px;
+
+}
+
+h3{
+	margin-left: 25%;
+	margin-right: 0%;
+	text-align : center;
+	margin-top: 100px;
+	font-size: 16px;
+	color:#FB1515;
+
+}
+h4{
+	margin-left: 10%;
+	margin-right: 0%;
+	text-align : center;
+	margin-top: 100px;
+	font-size: 16px;
+	color:#FB1515;
+
+}
+
+/*****************************************************************************
+***********************************Contenido***********************************
+******************************************************************************/
+
+.contenido{
+	background-color: #fff;
+	margin-left: auto;
+	margin-right: auto;
+	min-width: 800px;
+	width: 60%;
+	border: 1px solid #dedede;
+	border-radius: 10px;
+	box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
+	color: #000;
+	display: block;
+	overflow: hidden;
+	margin-top: 2%;
+	height: 650px;
+
+}
+
+.contenido p{
+	text-align: center;
+}
+
+.contenido form{
+
+	margin-left: 15%;
+	margin-right: 5%;
+
+}
+
+.contenido form legend{
+	padding: 0em 0em 1em 0em;
+	margin-left: 10%;
+	text-transform: uppercase;
+	font-size: 23px;
+	margin-top: 25px;
+	width: 90%
+}
+#analizar{
+	float:center;
+	width: 90%;
+
+}
+.contenidoEntrada{
+	text-align: center; 
+	position: relative;
+	margin-top: 100px;
+}
+.contenido span{
+	float: left;
+	width: 90%;
+}
+
+.contenido span label{
+	float: left;
+	margin-top: 15px;
+}
+
+.contenido span input{
+	float: right;
+	width: 40%;
+	margin-top: 15px;
+	text-align: center;
+}
+#imagen{
+	margin-top: 150px;
+	margin-left: 240px;
+	height: 250px;
+	width: 585px;
+}
+#gif{
+	margin-top: 100px;
+	margin-left: 450px;
+	height: 100px;
+	width: 100px;
+}
+

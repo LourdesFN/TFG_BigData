@@ -1,0 +1,91 @@
+<!--GNU GENERAL PUBLIC LICENSE
+      Version 2, June 1991
+{TFG-LourdesFernándezNieto}
+Copyright (C) {2016}  {Lourdes Fernández Nieto}
+-->
+
+<h2>Usuarios con mayor número de Favoritos</h2>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+
+<script>
+  var dataArray = <%- JSON.stringify(datay) %>;
+  var etiquetas = <%- JSON.stringify(datax) %>;
+  var w = 45 * parseInt(etiquetas.length);
+
+  var margin = {top: 30, right: 0, bottom:150 , left: 310},
+  width = 1000 - margin.left - margin.right,
+  height = 500 - margin.top - margin.bottom;
+
+  var x = d3.scale.ordinal()
+  .rangeRoundBands([-10, w], .15)
+  .domain(etiquetas);
+
+  var y = d3.scale.linear()
+  .range([height , 0])
+  .domain([0, dataArray[0]]);
+
+  var xAxis = d3.svg.axis()
+  .scale(x)
+  .orient("bottom")
+  .ticks(etiquetas.length)
+  .tickValues(etiquetas)
+  .tickFormat(function(d){
+    return d;
+  });
+
+  var yAxis = d3.svg.axis()
+  .scale(y)
+  .orient("left")
+  .tickPadding(10); 
+
+  var widthScale = d3.scale.linear()
+  .domain([0, dataArray[0]])
+  .range([0, height]);       
+
+  var color = d3.scale.linear()
+  .domain([0, 1])
+  .range(["blue", "green"]);
+
+  var canvas = d3.select(".contenido")
+  .append("svg")
+  .attr("width", width + margin.left + margin.right)
+  .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+  .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+  canvas.append("g")
+  .attr("class", "x axis")
+  .attr("transform", "translate(0," + height + ")")
+  .call(xAxis)
+  .selectAll("text")
+  .attr("y", 0)
+  .attr("x", 9)
+  .attr("dy", ".35em")
+  .attr("transform", "rotate(90)")
+  .style("text-anchor", "start");
+
+
+  canvas.append("g")
+  .attr("class", "y axis")
+  .call(yAxis)
+  .append("text")
+  .attr("transform", "rotate(0)")
+  .attr("y", -20)
+  .attr("dy", ".71em")
+  .style("text-anchor", "end")
+  .text("Número");
+
+
+
+  var bars = canvas.selectAll("rect")
+  .data(dataArray)
+  .enter()
+  .append("rect")
+  .attr("x", function(d, i) { return i * 45;})
+  .attr("y", function(d) {return height - widthScale(d);} )
+  .attr("height",function(d) {return widthScale(d); })
+  .attr("width", 30) 
+  .attr("fill",  function(d) { return color(d);});
+
+
+</script>
